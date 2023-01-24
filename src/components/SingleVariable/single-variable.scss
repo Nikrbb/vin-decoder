@@ -1,0 +1,98 @@
+.var {
+    padding-top: 20px;
+
+    &__title {
+        color: grey;
+        text-align: center;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+        border: 1px dotted grey;
+        border-radius: 4px;
+    }
+    &__item {
+        padding: 15px;
+
+        &--name {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            border-bottom: 1px dotted grey;
+        }
+        &--type {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            border-bottom: 1px dotted grey;
+        }
+        &--group {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        &--description {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 4;
+            border-left: 1px dotted grey;
+        }
+        & span {
+            font-size: 13px;
+            color: grey;
+        }
+        & li {
+            word-break: break-word;
+        }
+        & p, ul {
+            margin-bottom: 10px;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .var {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+        }
+        &__item {
+
+            &--name {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                border-right: 1px dotted grey;
+                border-bottom: none;
+            }
+            &--type {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                border-right: 1px dotted grey;
+                border-bottom: none;
+            }
+            &--group {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            &--description {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                border-top: 1px dotted grey;
+                border-left: none;
+            }
+        }
+    }
+}

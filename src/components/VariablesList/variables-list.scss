@@ -1,0 +1,52 @@
+.variables {
+
+    &__message {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 10px 0;
+        border-bottom: 1px dotted grey;
+        color: grey;
+        text-align: center;
+    }
+
+    &__table-wrapper {
+        //margin-top: 10px;
+        height: 80vh;
+        overflow: scroll;
+    }
+    &__table {
+        border-collapse: collapse;
+        position: sticky;
+        top: 0;
+        border: 1px solid white;
+
+    }
+    &__head {
+        position: sticky;
+        top: -1px;
+        background-color: white;
+        height: 30px;
+    }
+    &__title {
+        border: 1px dotted grey;
+    }
+    &__body {
+    }
+    &__row {
+
+    }
+    &__name {
+        //border: 1px dotted grey;
+    }
+    &__data {
+        border: 1px dotted grey;
+        padding: 5px;
+
+        &--id {
+            text-align: center;
+        }
+        &--name {}
+        &--description {}
+    }
+}
