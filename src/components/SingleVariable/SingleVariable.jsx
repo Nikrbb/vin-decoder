@@ -30,7 +30,7 @@ class SingleVariable extends React.Component {
             if (this.state.status === "no-data") {
                 return (
                 <Placeholder title="Внимание, данных либо нет, либо они потерялись по пути">
-                    <PlaceholderRobot />
+                    <PlaceholderRobot type="no-results" />
                 </Placeholder>
                 )
             } else if ( this.state.status === "loading") {
