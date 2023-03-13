@@ -1,6 +1,9 @@
 import './decoder.scss'
 import React from "react";
 import axios from 'axios';
+import Button from "@avtopro/button/dist/index"
+import Select, { Option } from "@avtopro/select/dist/index";
+import Modal from "@avtopro/modal/dist/index";
 
 class Decoder extends React.Component {
     constructor(props) {
@@ -10,7 +13,8 @@ class Decoder extends React.Component {
             vinInputValue: null,
             recentlyViewedList: [],
             vinData: {},
-            loading: true
+            loading: true,
+            isShownModal: false
         }
     }
 
@@ -80,6 +84,7 @@ class Decoder extends React.Component {
     };
 
     render() {
+
         const MsgFromRequest = () => {
             if (!Object.keys(this.state.vinData).length) return (
                 <div className="decoder__empty-msg">
@@ -91,17 +96,26 @@ class Decoder extends React.Component {
                 <p >{this.state.vinData.message}</p>
             </div>
         }
-
+        
         const RecentlyViewedVinCodes = () => {
+            
             if (this.state.recentlyViewedList.length) {
                 return (
                     <div className="decoder__viewed">
                         <h5>Recently viewed:</h5>
-                        <ul>
+
+                        <Select onChange={(_, vin) => this.getVinData(vin[0])}>
+                            {this.state.recentlyViewedList.map(vin => 
+                            <Option value={vin} key={vin}>{vin}</Option>
+                            )}
+                        </Select>
+
+                        {/* <ul>
                             {this.state.recentlyViewedList.map(vin => <li key={vin}>
                                 <span className="decoder__viewed-link" onClick={() => this.getVinData(vin) }>{ vin }</span>
                             </li>)}
-                        </ul>
+                        </ul> */}
+                         
                     </div>
                 )
             } else return null
@@ -110,7 +124,6 @@ class Decoder extends React.Component {
         const VinCodeDataList = () => {
             const { searchedVin } = this.state.vinData;
 
-            // if (this.state.loading || !Object.keys(this.state.vinData).length) return null;
             if (this.state.loading || !this.state.vinData.results) return null;
             else return <ul className="decoder__data-list">
                 {this.state.vinData.results.map((elem, index) => {
@@ -122,7 +135,11 @@ class Decoder extends React.Component {
             </ul>
         };
 
-        return <section className="decoder section">
+        return this.state.isShownModal 
+        ?   <Modal>
+                 <div>Модалка</div>
+            </Modal> 
+        : <section className="decoder section">
             <div className="decoder__head">
 
                 <div className='decoder__input-wrapper'>
@@ -131,21 +148,23 @@ class Decoder extends React.Component {
                         placeholder="type vin to decode"
                         onChange={ (e) => this.setState({ vinInputValue: e.target.value }) }
                         type="text"/>
-                    <button className="decoder__request-btn"
-                            onClick={ () => this.getVinData() }>
-                        {this.state.loading ? "loading" : "Send request"}
-                    </button>
+                    <Button 
+                        blockSize="sm" 
+                        theme="blue"
+                        onClick={ () => this.getVinData() }>
+                    {this.state.loading ? "loading" : "Send request"}
+                    </Button>
                 </div>
 
                 <MsgFromRequest/>
 
             </div>
 
+            
             <RecentlyViewedVinCodes/>
 
             <VinCodeDataList/>
 
-            {/*{!Object.keys(this.state.vinData).length ?*/}
             { !this.state.vinData.results || this.state.loading ?
                 null :
                 <button className="decoder__clear-btn"

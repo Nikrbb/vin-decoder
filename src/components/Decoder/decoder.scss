@@ -78,7 +78,7 @@
         position: relative;
         display: flex;
         flex-grow: 1;
-        text-align: center;
+        // text-align: center;
         padding: 20px 0;
         margin-top: 20px;
         border-bottom: 1px dotted grey;
@@ -89,15 +89,15 @@
             top: 0;
             color: grey;
         }
-        & ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-        & li {
-            font-size: 12px;
-        }
+        // & ul {
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     gap: 10px;
+        //     align-items: center;
+        // }
+        // & li {
+        //     font-size: 12px;
+        // }
     }
     &__viewed-link {
         cursor: pointer;

@@ -45,8 +45,9 @@ const Nav = () => {
                 Variables
             </Link>
             <Link
-                className={'nav__link' + disabledClass + (location.pathname === ("/variables/" + slug) ? " active" : "")}
-                to={'/variables/' + slug}>
+                // className={'nav__link' + disabledClass + (location.pathname === ("/variables/" + slug) ? " active" : "")}
+                className={'nav__link' + (location.pathname === ("/variables/" + slug) ? " active" : "")}
+                to={slug ? ('/variables/' + slug) : "/variables/0"}>
                 {"ID: " + (slug ? slug : "")}
             </Link>
         </nav>

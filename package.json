@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@avtopro/button": "^0.9.7-344ab8b.0",
+    "@avtopro/icons": "^0.23.1-344ab8b.0",
+    "@avtopro/modal": "^0.8.7-344ab8b.0",
+    "@avtopro/placeholder": "^0.8.7-344ab8b.0",
+    "@avtopro/select": "^0.16.7-344ab8b.0",
+    "@avtopro/text-input": "^0.7.7-344ab8b.0",
+    "@avtopro/tooltip": "^0.6.7-344ab8b.0",
     "axios": "^0.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
