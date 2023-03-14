@@ -8,9 +8,9 @@ import Page404 from "../../routes/404";
 const NavRoutes = () => {
     return <div>
         <Routes>
-            <Route path='/vin-decoder' element={ <VinDecoderPage/> } />
-            <Route path='/vin-decoder/variables' element={ <AllVariablesPage/> } />
-            <Route path='/vin-decoder/variables/:slug' element={ <VariablePage/> } />
+            <Route path='/decoder' element={ <VinDecoderPage/> } />
+            <Route path='/variables' element={ <AllVariablesPage/> } />
+            <Route path='/variables/:slug' element={ <VariablePage/> } />
             <Route path='*' element={ <Page404/> } />
         </Routes>
     </div>
