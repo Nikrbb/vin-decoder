@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/vin-decoder/static/css/main.35559e3c.css",
+    "main.js": "/vin-decoder/static/js/main.4abb7568.js",
+    "static/media/no_sto-youtube-svg": "/vin-decoder/static/media/no_sto-youtube-ec26b04a59c97298ed55c2b421a8af25.ec26b04a59c97298ed55.svg",
+    "static/media/robot-ff-zero-svg": "/vin-decoder/static/media/robot-ff-zero-d0df06513946811796530c317990f4fc.d0df0651394681179653.svg",
+    "static/media/no_shops-svg": "/vin-decoder/static/media/no_shops-7d55f6b805535ac533e9317999794131.7d55f6b805535ac533e9.svg",
+    "static/media/no_banner-svg": "/vin-decoder/static/media/no_banner-cec42543fb2e6375d2a923b5c3c022e8.cec42543fb2e6375d2a9.svg",
+    "static/media/no_sto-svg": "/vin-decoder/static/media/no_sto-01e1c8f3480003fd1706fb6d5383848b.01e1c8f3480003fd1706.svg",
+    "static/media/service_unavailable-svg": "/vin-decoder/static/media/service_unavailable-33a2c4edc4e06c506039f0dc49ea3227.33a2c4edc4e06c506039.svg",
+    "static/media/robot_preloader-svg": "/vin-decoder/static/media/robot_preloader-b55f64849b6ff6f99bd0b156ae70c65e.b55f64849b6ff6f99bd0.svg",
+    "static/media/no_messages-svg": "/vin-decoder/static/media/no_messages-0b8cdc6319acd5e414d7efd0774e0e2e.0b8cdc6319acd5e414d7.svg",
+    "static/media/robo_status_noresults-svg": "/vin-decoder/static/media/robo_status_noresults-684bcc4b8a22395c8192e913d0665aa2.684bcc4b8a22395c8192.svg",
+    "static/media/youtube-svg": "/vin-decoder/static/media/youtube-89605f0237a42dd84ba750550e215d66.89605f0237a42dd84ba7.svg",
+    "static/media/deleted_message-svg": "/vin-decoder/static/media/deleted_message-9a9e654474e4c16dfeed5aa86457143b.9a9e654474e4c16dfeed.svg",
+    "static/media/robot-zero-svg": "/vin-decoder/static/media/robot-zero-1ec7ad7dcd9947d6f23fc32ec6f4ba82.1ec7ad7dcd9947d6f23f.svg",
+    "static/media/no_orders-svg": "/vin-decoder/static/media/no_orders-014af052b5b1ad193045f4d607b956bf.014af052b5b1ad193045.svg",
+    "static/media/robo-lamp-svg": "/vin-decoder/static/media/robo-lamp-6d7db8e365646ffc5aa242924f355f75.6d7db8e365646ffc5aa2.svg",
+    "static/media/robot-svg": "/vin-decoder/static/media/robot-7ea1494fd763bf7ae25ae2d1136e9d2d.7ea1494fd763bf7ae25a.svg",
+    "static/media/robo_no_warehouses-svg": "/vin-decoder/static/media/robo_no_warehouses-3e7ddc4aede3289e12294421d89f68d7.3e7ddc4aede3289e1229.svg",
+    "static/media/robot-head-alt-svg": "/vin-decoder/static/media/robot-head-alt-1b2bbfc7633fced5a64ade9091648317.1b2bbfc7633fced5a64a.svg",
+    "static/media/gears-svg": "/vin-decoder/static/media/gears-ab8bbca9a2cf30a625f37c8b03ae77ed.ab8bbca9a2cf30a625f3.svg",
+    "static/media/robot_warning-svg": "/vin-decoder/static/media/robot_warning-64e0c82b7afc9ed45af84871fdb30820.64e0c82b7afc9ed45af8.svg",
+    "static/media/robot_error-svg": "/vin-decoder/static/media/robot_error-fc9f40a44625e0e50ca6bfde243416e4.fc9f40a44625e0e50ca6.svg",
+    "index.html": "/vin-decoder/index.html",
+    "static/media/robot_info-svg": "/vin-decoder/static/media/robot_info-406e0c4ba1be13de2d41c0f8da8e69aa.406e0c4ba1be13de2d41.svg",
+    "static/media/robot_success-svg": "/vin-decoder/static/media/robot_success-7ddbade0bed2dfe0b1cd5d9df9fd7329.7ddbade0bed2dfe0b1cd.svg",
+    "main.35559e3c.css.map": "/vin-decoder/static/css/main.35559e3c.css.map",
+    "main.4abb7568.js.map": "/vin-decoder/static/js/main.4abb7568.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35559e3c.css",
+    "static/js/main.4abb7568.js"
+  ]
+}
