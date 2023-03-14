@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vin-decoder/static/css/main.35559e3c.css",
-    "main.js": "/vin-decoder/static/js/main.4abb7568.js",
+    "main.js": "/vin-decoder/static/js/main.679dfe44.js",
     "static/media/no_sto-youtube-svg": "/vin-decoder/static/media/no_sto-youtube-ec26b04a59c97298ed55c2b421a8af25.ec26b04a59c97298ed55.svg",
     "static/media/robot-ff-zero-svg": "/vin-decoder/static/media/robot-ff-zero-d0df06513946811796530c317990f4fc.d0df0651394681179653.svg",
     "static/media/no_shops-svg": "/vin-decoder/static/media/no_shops-7d55f6b805535ac533e9317999794131.7d55f6b805535ac533e9.svg",
@@ -26,10 +26,10 @@
     "static/media/robot_info-svg": "/vin-decoder/static/media/robot_info-406e0c4ba1be13de2d41c0f8da8e69aa.406e0c4ba1be13de2d41.svg",
     "static/media/robot_success-svg": "/vin-decoder/static/media/robot_success-7ddbade0bed2dfe0b1cd5d9df9fd7329.7ddbade0bed2dfe0b1cd.svg",
     "main.35559e3c.css.map": "/vin-decoder/static/css/main.35559e3c.css.map",
-    "main.4abb7568.js.map": "/vin-decoder/static/js/main.4abb7568.js.map"
+    "main.679dfe44.js.map": "/vin-decoder/static/js/main.679dfe44.js.map"
   },
   "entrypoints": [
     "static/css/main.35559e3c.css",
-    "static/js/main.4abb7568.js"
+    "static/js/main.679dfe44.js"
   ]
 }
