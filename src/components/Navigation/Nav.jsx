@@ -33,8 +33,8 @@ const Nav = () => {
     return <div>
         <nav className='nav'>
             <Link
-                className={"nav__link" + (location.pathname === "/decoder" ? " active" : "")}
-                to='/decoder'>
+                className={"nav__link" + (location.pathname === "/" ? " active" : "")}
+                to='/'>
                 Vin Decoder
             </Link>
             <Link
