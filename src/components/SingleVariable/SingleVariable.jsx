@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 import Placeholder from "@avtopro/placeholder/dist/index";
 import PlaceholderRobot from '@avtopro/placeholder-robot/dist/index';
+import RobotPreloader from '@avtopro/preloader/dist/index';
 
 class SingleVariable extends React.Component {
     constructor(props) {
@@ -29,12 +30,13 @@ class SingleVariable extends React.Component {
         const PageStatus = () => {
             if (this.state.status === "no-data") {
                 return (
-                <Placeholder title="Внимание, данных либо нет, либо они потерялись по пути">
+                <Placeholder>
+                    <h3>Data wasn`t found</h3>
                     <PlaceholderRobot type="no-results" />
                 </Placeholder>
                 )
             } else if ( this.state.status === "loading") {
-                return <span className="loading"/>
+                return  <RobotPreloader/>
             } else if (this.state.status === "loaded") {
                 return <>
                 <h3 className="var__title">Full description of variable ID: {this.state.currentVariable.ID}</h3>

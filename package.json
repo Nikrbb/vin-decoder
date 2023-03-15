@@ -7,6 +7,7 @@
     "@avtopro/icons": "^0.23.1-344ab8b.0",
     "@avtopro/modal": "^0.8.7-344ab8b.0",
     "@avtopro/placeholder": "^0.8.7-344ab8b.0",
+    "@avtopro/preloader": "^0.4.7-344ab8b.0",
     "@avtopro/select": "^0.16.7-344ab8b.0",
     "@avtopro/text-input": "^0.7.7-344ab8b.0",
     "@avtopro/tooltip": "^0.6.7-344ab8b.0",

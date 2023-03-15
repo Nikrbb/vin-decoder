@@ -5,6 +5,7 @@ import Select, { Option } from "@avtopro/select/dist/index";
 import Modal from "@avtopro/modal/dist/index";
 import TextInput from "@avtopro/text-input/dist/index";
 import PlaceholderRobot from '@avtopro/placeholder-robot/dist/index';
+import RobotPreloader from '@avtopro/preloader/dist/index';
 import React, { useState, useEffect } from 'react';
 
 function Decoder() {
@@ -113,7 +114,8 @@ function Decoder() {
     function VinCodeDataList () {
         const { searchedVin } = vinData;
 
-        if (loading || !vinData.results) return null;
+        if (!loading && !vinData.results) return null
+        else  if (loading || !vinData.results) return <RobotPreloader fixed/>;
         else return <ul className="decoder__data-list">
             {vinData.results.map((elem, index) => {
                 return <li className="decoder__data-item" key={index + searchedVin}>
@@ -148,17 +150,17 @@ function Decoder() {
 
             { !vinData.results || loading ?
                 null :
-                <button className="decoder__clear-btn"
+                <Button blockSize="sm" theme="youtube" className="decoder__clear-btn"
                         onClick={() => toggleModal(true)}>
                     clear
-                </button> }
+                </Button> }
 
 
             { isShownModal
             ?   <Modal size="wide" onClose={() => {toggleModal(!isShownModal) }}>
                     <div>
                         <p style={{textAlign: "center"}}>Are you sure you want to clear vehicle data?</p>
-                        <Button onClick={() => {setVinData({}); toggleModal(!isShownModal)}} style={{position: "absolute", bottom: '10px', right: '10px'}} theme="danger" blockSize="sm">delete</Button>
+                        <Button onClick={() => {setVinData({}); toggleModal(!isShownModal)}} style={{position: "absolute", bottom: '10px', right: '10px', color: "red"}} theme="inverse" blockSize="sm">delete</Button>
                         <PlaceholderRobot />
                     </div>
                 </Modal> 
