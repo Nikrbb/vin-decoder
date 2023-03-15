@@ -1,0 +1,10 @@
+
+@avtopro:registry=https://abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/registry/            
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/registry/:username=VssSessionToken
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/registry/:_password=NPM_TOKEN
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/registry/:email=not-used@example.com
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/:username=VssSessionToken
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/:_password=NPM_TOKEN
+//abp.pkgs.visualstudio.com/Avto.Pro/_packaging/Avtopro_Feed/npm/:email=not-used@example.com
+always-auth=true
+legacy-peer-deps=true
