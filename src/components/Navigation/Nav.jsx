@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const Nav = () => {
     const [slug, updateSlug] = useState("");
-    const [disabledClass, updateDisabledClass] = useState(" disabled");
+    // const [disabledClass, updateDisabledClass] = useState(" disabled");
     // const [activeLink, updateActiveLink] = useState("")
     const location = useLocation();
 
@@ -16,17 +16,15 @@ const Nav = () => {
 
             if (id.length < 4) {
                 updateSlug(+id);
-                updateDisabledClass("");
+    
             } else {
                 updateSlug(null);
-                updateDisabledClass(" disabled");
             }
 
 
         } else if (location.pathname.includes('404') ) {
 
             updateSlug("");
-            updateDisabledClass(" disabled");
 
         }
 
