@@ -6,6 +6,8 @@ import Modal from "@avtopro/modal/dist/index";
 import TextInput from "@avtopro/text-input/dist/index";
 import PlaceholderRobot from '@avtopro/placeholder-robot/dist/index';
 import RobotPreloader from '@avtopro/preloader/dist/index';
+import FormFrame from '@avtopro/form-frame/dist/index';
+import FormControl from '@avtopro/form-control/dist/index';
 import React, { useState, useEffect } from 'react';
 
 function Decoder() {
@@ -17,10 +19,15 @@ function Decoder() {
     const [isShownModal, toggleModal] = useState(false);
 
     useEffect(() => {
-        let viewedList = JSON.parse(localStorage.getItem('viewedList'));
 
-        setRecentlyViewedList( viewedList ? viewedList : []);
+        let viewedList = JSON.parse(localStorage.getItem('viewedList'));
+        let lastSeenVin = JSON.parse(localStorage.getItem('lastSeenVin'));
+        
+        if (viewedList) setRecentlyViewedList(viewedList);
+        if (lastSeenVin) setVinData(lastSeenVin)
+        
         setLoading(false);
+        
     }, [])
 
     const getVinData = (vin) => {
@@ -42,7 +49,10 @@ function Decoder() {
                     message: response.data.Message,
                     results: response.data.Results.filter(elem => !!elem.Value)
                 }
+
                 setVinData(vinResponse);
+                localStorage.setItem("lastSeenVin", JSON.stringify(vinResponse));
+
                 if (!recentlyViewedList.includes( vinToDecode )) {
 
                     let viewedList = [...recentlyViewedList, vinToDecode];
@@ -81,6 +91,11 @@ function Decoder() {
         } else return true;
 
     };
+    const deleteData = () => {
+        setVinData({}); 
+        toggleModal(!isShownModal);
+        localStorage.removeItem("lastSeenVin");
+    }
     function  MsgFromRequest(props)  {
         if (!Object.keys(props.vinData).length) return (
             <div className="decoder__empty-msg">
@@ -93,14 +108,12 @@ function Decoder() {
         </div>
     }
     function RecentlyViewedVinCodes() {
-            return (
+            return ( recentlyViewedList[0] ?
                 <div className="decoder__viewed">
-                    <h5>Recently viewed:</h5>
-
                     <Select 
                         onChange={(_, vin) => getVinData(vin[0])} 
                         value={latestSearch}
-                        placeholder={!recentlyViewedList[0] ? "empty" : "select"}
+                        placeholder="Recently viewed"
                         blockSize="sm"
                         >
                             {recentlyViewedList.map(vin => 
@@ -108,7 +121,7 @@ function Decoder() {
                             )}
                     </Select>
                      
-                </div>
+                </div> : null
             )
     };
     function VinCodeDataList () {
@@ -130,8 +143,13 @@ function Decoder() {
             <div className="decoder__head">
 
                 <div className='decoder__input-wrapper'>
-                    <TextInput onChange={ (e) => setInputValue( e.target.value ) } blockSize="sm" placeholder="type vin to decode" />
+                    <FormFrame>
+                        <FormControl label="Vin code" htmlFor="vinCode">
+                            <TextInput onChange={ (e) => setInputValue( e.target.value ) } id="vinCode" blockSize="sm" name="vin" placeholder="Type vin to decode" />
+                        </FormControl>
+                    </FormFrame>
                     <Button 
+                        uppercase
                         blockSize="sm" 
                         theme="blue"
                         onClick={ () => getVinData() }>
@@ -150,19 +168,22 @@ function Decoder() {
 
             { !vinData.results || loading ?
                 null :
-                <Button blockSize="sm" theme="youtube" className="decoder__clear-btn"
+                <Button blockSize="sm" theme="youtube" uppercase className="decoder__clear-btn"
                         onClick={() => toggleModal(true)}>
                     clear
                 </Button> }
 
 
             { isShownModal
-            ?   <Modal size="wide" onClose={() => {toggleModal(!isShownModal) }}>
-                    <div>
-                        <p style={{textAlign: "center"}}>Are you sure you want to clear vehicle data?</p>
-                        <Button onClick={() => {setVinData({}); toggleModal(!isShownModal)}} style={{position: "absolute", bottom: '10px', right: '10px', color: "red"}} theme="inverse" blockSize="sm">delete</Button>
-                        <PlaceholderRobot />
+            ?   <Modal closeOnClick size="wide" onClose={() => {toggleModal(!isShownModal) }}>
+
+                    <div className="modwin__caption">Confirm action</div>
+                    <div className="modwin__sub-caption">Are you sure you want to clear vehicle data?</div>
+                    <PlaceholderRobot />
+                    <div className='text-center'>
+                        <Button onClick={() => deleteData()} uppercase theme="youtube" blockSize="sm">delete</Button>
                     </div>
+
                 </Modal> 
             : null }
 

@@ -17,6 +17,21 @@ ul {
 li {
   list-style: none;
 }
+.d-flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
 .container {
   max-width: 1440px;
   margin: 0 auto;

@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@avtopro/button": "^0.9.7-344ab8b.0",
+    "@avtopro/form-control": "^0.8.7-344ab8b.0",
+    "@avtopro/form-frame": "^0.5.7-344ab8b.0",
     "@avtopro/icons": "^0.23.1-344ab8b.0",
     "@avtopro/modal": "^0.8.7-344ab8b.0",
     "@avtopro/placeholder": "^0.8.7-344ab8b.0",

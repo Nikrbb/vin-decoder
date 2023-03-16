@@ -40,7 +40,7 @@ class VariablesList extends React.Component {
                         return (
                             <tr className="variables__row" key={ el.ID }>
                                 <td className="variables__data variables__data--id"><Link to={`/variables/${el.ID}`}>{ el.ID }</Link></td>
-                                <td className="variables__data variables__data--name">{ el.Name }</td>
+                                <td className="variables__data variables__data--name"><Link to={`/variables/${el.ID}`}>{ el.Name }</Link></td>
                                 <td className="variables__data variables__data--description" dangerouslySetInnerHTML={{__html: el.Description}}/>
                             </tr>
                         )
