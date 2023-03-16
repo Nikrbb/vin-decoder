@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-        - name: Authenticate npm
+      - name: Authenticate npm
         # Replace basic .npmrc with .npmrc for GitHub Actions
         # and substitute "password" parameter with secret token
         run: |
